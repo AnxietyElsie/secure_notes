@@ -1,5 +1,18 @@
 import Config
+import Dotenvy
 
+source!([Path.expand("./.env")])
+
+config :secure_notes, SecureNotes.Repo,
+  database: env!("DATABASE_NAME", :string),
+  username: env!("DATABASE_USER", :string),
+  password: env!("DATABASE_PASS", :string),
+  hostname: env!("DATABASE_HOST", :string, "localhost"),
+  pool_size: 10
+
+config :secure_notes, SecureNotesWeb.Endpoint,
+  secret_key: env!("SECRET_KEY", :string!),
+  http: [port: 4000]
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration

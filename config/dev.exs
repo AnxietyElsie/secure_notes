@@ -1,14 +1,14 @@
 import Config
 
 # Configure your database
-config :secure_notes, SecureNotes.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "secure_notes_dev",
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+#config :secure_notes, SecureNotes.Repo,
+  #username: "postgres",
+  #password: "postgres",
+  #hostname: "localhost",
+  #database: "secure_notes_dev",
+  #stacktrace: true,
+ # show_sensitive_data_on_connection_error: true,
+  #pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -23,7 +23,6 @@ config :secure_notes, SecureNotesWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "ga7srXI5+CS1yedBxQg1lJBClhpWVTUxkA/7DozLBdVnUFlqj4IErCbYzb01vSPN",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:secure_notes, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:secure_notes, ~w(--watch)]}
@@ -58,12 +57,12 @@ config :secure_notes, SecureNotesWeb.Endpoint,
     web_console_logger: true,
     patterns: [
       # Static assets, except user uploads
-      ~r"priv/static/(?!uploads/).*\.(js|css|png|jpeg|jpg|gif|svg)$"E,
+      ~r"priv/static/(?!uploads/).*\.(js|css|png|jpeg|jpg|gif|svg)$",
       # Gettext translations
-      ~r"priv/gettext/.*\.po$"E,
+      ~r"priv/gettext/.*\.po$",
       # Router, Controllers, LiveViews and LiveComponents
-      ~r"lib/secure_notes_web/router\.ex$"E,
-      ~r"lib/secure_notes_web/(controllers|live|components)/.*\.(ex|heex)$"E
+      ~r"lib/secure_notes_web/router\.ex$",
+      ~r"lib/secure_notes_web/(controllers|live|components)/.*\.(ex|heex)$"
     ]
   ]
 
