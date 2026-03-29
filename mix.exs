@@ -40,6 +40,15 @@ defmodule SecureNotes.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ash_cloak, "~> 0.2"},
+      {:cloak, "~> 1.0"},
+      {:live_debugger, "~> 0.7", only: [:dev]},
+      {:ash_admin, "~> 0.14"},
+      {:ash_authentication_phoenix, "~> 2.0"},
+      {:ash_authentication, "~> 4.0"},
+      {:ash_postgres, "~> 2.0"},
+      {:ash_phoenix, "~> 2.0"},
+      {:ash, "~> 3.0"},
       {:igniter, "~> 0.6", only: [:dev, :test]},
       {:phoenix, "~> 1.8.5"},
       {:phoenix_ecto, "~> 4.5"},
